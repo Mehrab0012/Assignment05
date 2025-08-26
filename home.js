@@ -60,12 +60,12 @@ callButton.forEach(call=>{
         //Inserting elements
         div.innerHTML = `
                 <div class="inserted"></div>
-                <div  class="history-items flex p-5 flex-row justify-between items-center bg-[#e8e8e8] mt-4">
-                    <div class="  rounded-[16px]" >
-                        <h4 id="emergency-name" class=" inter font-semibold text-[1.125rem] ">${call.dataset.value1}</h4>
-                        <span id="emergency-number hind text-[1.125rem]">${call.dataset.value2}</span>
+                <div  class="history-items flex p-3 md:p-5 flex-row justify-between items-center bg-[#e8e8e8] mt-4">
+                    <div class="rounded-[16px]" >
+                        <h4 id="emergency-name" class="inter font-semibold text-[0.9rem] md:text-[1.125rem]">${call.dataset.value1}</h4>
+                        <span id="emergency-number hind text-[0.9rem] md:text-[1.125rem]">${call.dataset.value2}</span>
                     </div>
-                    <div><span id="time">${time}</span></div>
+                    <div><span id="time" class="text-[0.8rem] md:text-base">${time}</span></div>
                 </div>
             `
         const container =document.getElementById("history");
