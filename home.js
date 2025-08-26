@@ -48,5 +48,29 @@ callButton.forEach(call=>{
             return "";
         }
         idCatcher("coins").innerText = coinNumbers-20;
+
+        callButton.forEach(button => {
+        console.log(button.dataset.value1); 
+        const div = document.createElement("div");
+
+        //Fatching time
+        const now = new Date();
+        const time = now.toLocaleTimeString('en-US'); 
+        //Inserting elements
+        div.innerHTML = `
+                <div class="flex flex-row justify-center items-center bg-[#F9FAFB] mt-4">
+                    <div class=" p-4 rounded-[16px]" >
+                        <h4 id="emergency-name" class=" inter font-semibold text-[1.125rem] ">${button.dataset.value1}</h4>
+                        <span id="emergency-number hind text-[1.125rem]">${button.dataset.value2}</span>
+                    </div>
+                    <div><span id="time">${time}</span></div>
+                </div>
+            `
+        const container =document.getElementById("history");
+        container.appendChild(div);
+        });
+             
     })
 })
+
+//Clear functionality
