@@ -50,7 +50,6 @@ callButton.forEach(call=>{
         idCatcher("coins").innerText = coinNumbers-20;
 
         callButton.forEach(button => {
-        console.log(button.dataset.value1); 
         const div = document.createElement("div");
 
         //Fatching time
@@ -74,3 +73,10 @@ callButton.forEach(call=>{
 })
 
 //Clear functionality
+const clear = idCatcher("clear-button");
+clear.addEventListener('click', ()=>{
+
+        const container =document.getElementById("history");
+        container.innerHTML=``;
+        console.log("clicked");
+});
