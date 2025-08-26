@@ -3,11 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emergency Contact</title>
+    <title>Emergency Service</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="./src/output.css" rel="stylesheet">
 
 </head>
 <body>
+    <!-- Header Section -->
+    <header class="header w-full mb-12" >
+
+        <nav class="flex flex-row justify-between px-10 py-5 items-center h-full m-auto">
+            <div class="logo flex flex-row gap-3 w-50 h-13" >
+                <a href="/"><img class="h-13" src="./assets/logo.png" alt="Emergency Service"></a>
+                <span class="text-[#006747] inter leading-6 font-black ">Emergency <br> Service</span>
+            </div>
+
+            <ul class="flex flex-row gap-5">
+                <li class="w-[123px] h-[52px] bg-[#41FF6B1A] flex flex-row gap-1 rounded-full justify-center items-center">
+                    <span id="hearts" class="inter text-[1rem]">0</span><img class="h-[24px] text-2xl" src="./assets/heart.png" alt="heart">
+                </li>
+                <li class="w-[123px] h-[52px] bg-[#41FF6B1A] flex flex-row gap-1 rounded-full justify-center items-center">
+                    <span id="coins" class="inter text-[1rem]">100</span><img class="h-[24px] text-2xl" src="./assets/coin.png" alt="heart">
+                </li>
+                <li class="w-[123px] h-[52px] bg-[#00A63E] flex flex-row gap-1 rounded-full justify-center items-center">
+                    <span id="copies" class="inter text-[1rem] text-white inter">0</span><span class="text-[1rem] text-white inter">Copy</span>
+                </li>
+
+            </ul>
+        </nav>
+
+        <div class="w-full flex flex-col justify-center items-center h-[239px] bg-[linear-gradient(to_right,#013223_0%,#006747_50%,#013223_100%)]">
+            <img class="h-[100px]" src="./assets/logo-dark.png" alt="Republic of Bangladesh">
+            <h1 class="text-[2.5rem] text-white">Emergency Service Directory</h1>
+            <h2 class="text-[1.05rem] text-white mt-3">Government Emergency Services at Your Fingertip – A Project by  Government of the People’s Republic of Bangladesh</h2>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <main class="w-full h-auto p-15 m-auto">
+
+    <section class=" flex flex-row w-full gap-7">
+        <!-- Left Side Section -->
+    <section class="left-section w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+
+            <!-- Cards -->
+            <div class="flex flex-col items-start text-left w-auto shadow-[0_4px_15px_rgba(0,0,0,0.1)] h-auto p-8">
+                <!-- image and heart -->
+                 <div class="w-full flex justify-between items-center">
+                    <span class="w-[60px] h-[60px] bg-[#FFE3E2] rounded-2xl flex items-center justify-center"><img class="h-[32px]" src="./assets/emergency.png" alt="ambulance"></span>
+                    <span  class="heart cursor-pointer"><i class="fa-regular fa-heart text-black-100 text-2xl transform active:scale-90 active:text-red-400 active:shadow-sm"></i></span>
+                 </div>
+                <h3 class="text-[1.5rem]">National Emergency Number</h3>
+                <p class="text-[1.125rem] text-gray-400 mb-6 ">National Emergency</p>
+                <span id="national-emergency-number" class=" font-semibold text-3xl mb-1">999</span>
+                <span class="w-[53px] h-[37px] bg-[#f5f5f5] rounded-full flex justify-center items-center hind text-[#474747]">All</span>
+                <!-- Coppy and call buttons -->
+                 <div class="w-full flex flex-row gap-2 mt-6 mb-2">
+                    <button class="w-46 h-10 rounded-[8px] shadow-[0_4px_15px_rgba(0,0,0,0.1)] cursor-pointer transition transform active:scale-95 active:shadow-sm">
+                        <i class="fa-regular fa-copy mr-2"></i>Copy</button>
+                    <button class="w-46 h-10 rounded-[8px] shadow-[0_4px_15px_rgba(0,0,0,0.1)] cursor-pointer bg-green-600 text-white transition transform active:scale-95 active:shadow-sm">
+                        <i class="fa-solid fa-phone mr-2"></i></i>Call</button>
+                 </div>
+            </div>
+
+        </section>
+
+        <!-- Right Side Section -->
+        <section  class=" w-[30%] h-full shadow-[0_4px_15px_rgba(0,0,0,0.1)] p-5">
+            <div class="flex justify-between items-center mb-8 "> 
+                <div class="flex justify-center items-center gap-x-2">
+                    <i class="fa-regular fa-clock text-2xl text-gray-500"></i>
+                    <span class="hind min-sm:text-[0.8rem] lg:text-[1.125rem]">Call History</span>
+                </div>
+                <button id="clear-btn" class="shadow-[0_4px_15px_rgba(0,0,0,0.1)] cursor-pointer bg-green-600
+                 text-white transition transform active:scale-95 active:shadow-sm  min-md:w-27 min-md:h-12 rounded-full">
+                 Clear</button>
+            </div>
+
+            <!-- all History -->
+            <div id="history" class="w-full rounded-[8px] p-4 flex justify-between items-center bg-[#F9FAFB]">
+                <div>
+                    <h4 id="emergency-name" class="inter font-semibold text-[1.125rem]"></h4>
+                    <span id="emergency-number hind text-[1.125rem]"></span>
+                </div>
+                <span id="time"></span>
+            </div>
+        </section>
+
+    </section>
+    </main>
     
 </body>
 </html>
