@@ -18,7 +18,6 @@ heartsButton.forEach(heart=>{
     heart.addEventListener('click', ()=> {
     const heartsCountNumber = parseInt(heartsCount.innerText);
     idCatcher("hearts").innerText=heartsCountNumber+1;
-    alert("clicked")
 
 })
 });
@@ -32,11 +31,12 @@ copyButton.forEach(copy=>{
         const copyCountNumber =parseInt(copies.innerText);
         idCatcher("copies").innerText=copyCountNumber+1;
         navigator.clipboard.writeText(copy.value);
+        alert(`The number has been copied ${copy.value}`)
 
     })
 })
 
-//Coin counter
+//Coin counter and calling
 const callButton = classesCatcher(".call-button");
 const coins = idCatcher("coins");
 
@@ -50,7 +50,7 @@ callButton.forEach(call=>{
             return "";
         }
         idCatcher("coins").innerText = coinNumbers-20;
-
+       
 
         const div = document.createElement("div");
 
@@ -69,9 +69,8 @@ callButton.forEach(call=>{
                 </div>
             `
         const container =document.getElementById("history");
-        container.appendChild(div);
-
-        
+        container.prepend(div);
+        alert(`📞 Calling ${call.dataset.value1} ${call.dataset.value2}...`);
              
     })
 })
@@ -79,8 +78,6 @@ callButton.forEach(call=>{
 //Clear functionality
 const clear = idCatcher("clear-button");
 clear.addEventListener('click', ()=>{
-
         const container =document.getElementById("history");
         container.innerHTML=``;
-        console.log("clicked");
 });
